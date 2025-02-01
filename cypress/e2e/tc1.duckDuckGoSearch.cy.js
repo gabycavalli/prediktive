@@ -1,4 +1,4 @@
-describe('DuckDuckGo Search Validation', () => {
+/* describe('DuckDuckGo Search Validation', () => {
   it('Validates that each search result contains the word "android" in the title', () => {
     // Visita la página de búsqueda
     cy.visit('https://duckduckgo.com/?t=h_&hps=1&start=1&q=andriod&ia=web');
@@ -16,13 +16,27 @@ describe('DuckDuckGo Search Validation', () => {
             expect(title).to.include('Android');
             expect(title).to.not.be.empty;
             cy.log(`Resultado ${index + 1}: ${title}`);
-
-
           });
       });
   });
-});
+}); */
 
-//cy.get(':nth-child(2) > .KE_4ibtn0WI3iUo6lJw9 > .UWzy821Y58lvrLxQ7fnz > .sG3VWKPgDjJAlSrJSoLP') flecha dropdown
-//cy.get('[data-testid="region-filter-label"]') label filtro region
-//cy.get(':nth-child(2) > .KE_4ibtn0WI3iUo6lJw9 > [data-testid="dropdown-options"]') dropdpwn con las opciones
+// cypress/e2e/search/search.spec.ts
+import { searchPage } from '../../pages/searchPage';
+import { config } from '../config/config';
+
+describe('DuckDuckGo Search Validation', () => {
+  it(`Validates that each search result contains the word ${config.query} in the title`, () => {
+    // Visita la página de búsqueda
+    searchPage.visit(config.query);
+
+    // Espera los resultados y valida el título
+    searchPage.getSearchResults().each(($result, index) => {
+      searchPage.getResultTitle($result).then((title) => {
+        expect(title).to.include('Android');
+        expect(title).to.not.be.empty;
+        cy.log(`Resultado ${index + 1}: ${title}`);
+      });
+    });
+  });
+});
