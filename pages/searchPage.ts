@@ -1,5 +1,5 @@
-// cypress/page-objects/SearchPage.ts
 import { config } from '../cypress/config/config';
+import{ SearchPageSelectors } from '../pages/selectors';
 
 class SearchPage {
   visit(query: string) {
@@ -7,11 +7,23 @@ class SearchPage {
   }
 
   getSearchResults() {
-    return cy.get('.react-results--main').find('[data-testid="result"]');
+    return cy.get(SearchPageSelectors.resultsContainer).find(SearchPageSelectors.resultItem);
   }
 
-  getResultTitle(result: Cypress.Chainable) {
-    return result.find('[data-testid="result-title-a"]').invoke('text');
+  getResultTitle(result: JQuery<HTMLElement>) {
+    return cy.wrap(result).find(SearchPageSelectors.resultTitle).invoke('text');
+  }
+
+  clickAllRegions() {
+    return cy.get(
+      SearchPageSelectors.allRegionsButton
+    ).click();
+  }
+
+  getRegionOptions() {
+    return cy.get(
+      SearchPageSelectors.regionsOptionsContainer
+    ).children();
   }
 }
 

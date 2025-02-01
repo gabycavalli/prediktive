@@ -1,5 +1,6 @@
 export const config = {
   url: 'https://duckduckgo.com',
-  query: 'android',
+  query: 'Android',
   format: 'json',
+  totalToValidate: 10,
 };

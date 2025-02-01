@@ -2,11 +2,15 @@
   "compilerOptions": {
     "target": "es6",
     "lib": ["es6", "dom"],
-    "types": ["cypress", "node"], // Asegúrate de que "cypress" esté incluido aquí
+    "types": ["cypress", "node", "jquery","mocha"], // Asegúrate de que "cypress" esté incluido aquí
     "module": "commonjs",
+    "moduleResolution": "node",
     "esModuleInterop": true,
     "strict": true,
+    "resolveJsonModule": true,
+    "isolatedModules": false,
     "skipLibCheck": true
   },
-  "include": ["cypress/**/*.ts"] // Incluye todos los archivos TypeScript
+  "include": ["cypress/**/*.ts", "cypress/**/*.tsx"], // Asegúrate de incluir todos los archivos relevantes
+  "exclude": ["node_modules"], // Excluye node_modules
 }
