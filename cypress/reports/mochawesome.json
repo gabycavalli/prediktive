@@ -5,9 +5,9 @@
     "passes": 1,
     "pending": 0,
     "failures": 0,
-    "start": "2025-02-01T23:46:19.481Z",
-    "end": "2025-02-01T23:46:23.218Z",
-    "duration": 3737,
+    "start": "2025-02-01T23:59:27.472Z",
+    "end": "2025-02-01T23:59:31.170Z",
+    "duration": 3698,
     "testsRegistered": 1,
     "passPercent": 100,
     "pendingPercent": 0,
@@ -18,7 +18,7 @@
   },
   "results": [
     {
-      "uuid": "9dce6e58-077e-4520-b504-4fbbcaca1247",
+      "uuid": "a437e3a1-982d-4451-8ecf-5382994251d1",
       "title": "",
       "fullFile": "cypress\\e2e\\duckDuckGoSearch.cy.ts",
       "file": "cypress\\e2e\\duckDuckGoSearch.cy.ts",
@@ -27,7 +27,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "eef35dc6-1dc3-42cb-b83c-645a074ee196",
+          "uuid": "b2be4ae3-0fb6-4e4c-9560-534fef959a93",
           "title": "DuckDuckGo Search Result Title Validation",
           "fullFile": "",
           "file": "",
@@ -38,7 +38,7 @@
               "title": "Ensures that the title of each search result contains the word \"Android\"",
               "fullTitle": "DuckDuckGo Search Result Title Validation Ensures that the title of each search result contains the word \"Android\"",
               "timedOut": null,
-              "duration": 2310,
+              "duration": 2261,
               "state": "passed",
               "speed": "fast",
               "pass": true,
@@ -47,20 +47,20 @@
               "context": null,
               "code": "searchPage_1.searchPage.visit(config_1.config.query); // Visit the search page    \nsearchPage_1.searchPage.getSearchResults().each(($result, index) => {\n    const resultIndex = index;\n    searchPage_1.searchPage.getResultTitle($result).then((title) => {\n        // Validations\n        cy.wrap(title).should('include', config_1.config.query); // Verify that the title includes the query\n        cy.wrap(title).should('not.be.empty'); // Verify that the title is not empty\n        cy.log(`Result ${resultIndex + 1}: ${title}`);\n    });\n});",
               "err": {},
-              "uuid": "2386ad2e-f02e-40bd-8c3a-8cd1347ea988",
-              "parentUUID": "eef35dc6-1dc3-42cb-b83c-645a074ee196",
+              "uuid": "46d7c416-f539-4562-84ff-2563351425a0",
+              "parentUUID": "b2be4ae3-0fb6-4e4c-9560-534fef959a93",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
           "passes": [
-            "2386ad2e-f02e-40bd-8c3a-8cd1347ea988"
+            "46d7c416-f539-4562-84ff-2563351425a0"
           ],
           "failures": [],
           "pending": [],
           "skipped": [],
-          "duration": 2310,
+          "duration": 2261,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000
@@ -96,6 +96,7 @@
       "options": {
         "reportDir": "cypress/reports",
         "overwrite": false,
+        "video": true,
         "html": true,
         "json": true
       },

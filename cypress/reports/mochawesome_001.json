@@ -5,9 +5,9 @@
     "passes": 1,
     "pending": 0,
     "failures": 0,
-    "start": "2025-02-01T23:46:24.432Z",
-    "end": "2025-02-01T23:46:26.550Z",
-    "duration": 2118,
+    "start": "2025-02-01T23:59:32.423Z",
+    "end": "2025-02-01T23:59:34.535Z",
+    "duration": 2112,
     "testsRegistered": 1,
     "passPercent": 100,
     "pendingPercent": 0,
@@ -18,7 +18,7 @@
   },
   "results": [
     {
-      "uuid": "c109c496-c5f7-463a-9047-0b90f1d88a28",
+      "uuid": "c27d059b-7a53-41fb-9a78-3e84e36781cb",
       "title": "",
       "fullFile": "cypress\\e2e\\regionsModalValidation.cy.ts",
       "file": "cypress\\e2e\\regionsModalValidation.cy.ts",
@@ -27,7 +27,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "54ed1e22-f2f8-4a21-a08a-3609fff627dc",
+          "uuid": "c2531dfc-2c79-4964-8b02-21134c8dd779",
           "title": "DuckDuckGo Regions Modal Validation",
           "fullFile": "",
           "file": "",
@@ -38,7 +38,7 @@
               "title": "Assert that the total count of region options is greater than 10",
               "fullTitle": "DuckDuckGo Regions Modal Validation Assert that the total count of region options is greater than 10",
               "timedOut": null,
-              "duration": 1251,
+              "duration": 1128,
               "state": "passed",
               "speed": "fast",
               "pass": true,
@@ -47,20 +47,20 @@
               "context": null,
               "code": "searchPage_1.searchPage.visit(config_1.config.query); // Visit search page\ncy.get(selectors_1.SearchPageSelectors.resultsContainer, { timeout: 10000 }).should('be.visible'); // Wait for results to load\nsearchPage_1.searchPage.clickAllRegions(); // Click on the dropdown “All Regions”.\nsearchPage_1.searchPage.getRegionOptions().then(($options) => {\n    const totalCount = $options.length;\n    cy.log(`Total count of dropdown elements (all): ${totalCount}`);\n    cy.wrap(totalCount).should('be.greaterThan', config_1.config.totalToValidate); // Validate that the total number of options is greater than 10.\n});",
               "err": {},
-              "uuid": "75e2e5d6-4bc8-4ab8-9cf3-ef608d999235",
-              "parentUUID": "54ed1e22-f2f8-4a21-a08a-3609fff627dc",
+              "uuid": "d502c2d9-cad4-4297-b151-0f39a4fc0b5a",
+              "parentUUID": "c2531dfc-2c79-4964-8b02-21134c8dd779",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
           "passes": [
-            "75e2e5d6-4bc8-4ab8-9cf3-ef608d999235"
+            "d502c2d9-cad4-4297-b151-0f39a4fc0b5a"
           ],
           "failures": [],
           "pending": [],
           "skipped": [],
-          "duration": 1251,
+          "duration": 1128,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000
@@ -96,6 +96,7 @@
       "options": {
         "reportDir": "cypress/reports",
         "overwrite": false,
+        "video": true,
         "html": true,
         "json": true
       },
